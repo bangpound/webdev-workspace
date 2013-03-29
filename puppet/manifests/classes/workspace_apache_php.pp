@@ -54,8 +54,14 @@ class workspace_apache_php {
 	# If no version number is supplied, the latest stable release will be
 	# installed. In this case, upgrade PEAR to 1.9.2+ so it can use
 	# pear.drush.org without complaint.
-	package { 'PEAR': ensure => installed, provider => pear; }
-	package { 'Console_Table': ensure => installed, provider => pear; }
+	package { 'PEAR':
+	  ensure => present,
+	  provider => pear
+	}
+	package { 'Console_Table':
+	  ensure => present,
+	  provider => pear
+	}
 
 	file { '/etc/php5/conf.d/apc.ini':
 		ensure => "present",
