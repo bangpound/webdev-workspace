@@ -22,7 +22,7 @@ Installation for Mac environments
    [VirtualBox](https://www.virtualbox.org).
 
 3. Install [Vagrant](http://www.vagrantup.com) and the
-   [VMWare Fusion](http://www.vagrantup.com/vmware) if applicable.
+   [VMWare Fusion](http://www.vagrantup.com/vmware) plugin if applicable.
 4. Tap the PHP homebrew repository.
 
         brew tap josegonzalez/php
