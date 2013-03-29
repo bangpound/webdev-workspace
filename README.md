@@ -11,7 +11,7 @@ Principles
 * Avoid dependencies where possible in the host environment.
 * Avoid editing configuration files at all.
 * Prefer editing configuration files once instead of repeatedly.
-* Be platform agnostic (so long as that platform is PHP).
+* Be platform agnostic (so long as the platform is PHP).
 
 Installation for Mac environments
 ---------------------------------
