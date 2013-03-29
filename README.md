@@ -83,3 +83,11 @@ Installation for Mac environments
         cp -R default my-new-site.7
         logout
         open http://my-new-site.7
+
+Credits
+-------
+
+This environment is influenced by [CivicActions](http://www.civicactions.com) and
+[Drubuntu](http://drupal.org/project/drubuntu). Puppet scripts were poached from
+[FunnyMonkey](https://github.com/FunnyMonkey/fm-vagrant).
+
