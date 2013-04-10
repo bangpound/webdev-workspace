@@ -7,9 +7,20 @@ class workspace_apache_php {
 	apache::mod {'rewrite':}
 	apache::mod {'vhost_alias': }
 
+	user { "webdev-workspace":
+		ensure => present,
+		uid => '501',
+		gid => 'dialout',
+		shell => '/bin/sh',
+		home => '/vagrant',
+		managehome => false,
+	}
+
 	file { '/etc/apache2/conf.d/workspace':
 		ensure => "present",
-		content => "Include \"/vagrant/conf.d/*.conf\"",
+		content => "User webdev-workspace
+Group dialout
+Include \"/vagrant/conf.d/*.conf\"",
 		require => A2mod['vhost_alias'],
 		notify => Service[httpd]
 	}
