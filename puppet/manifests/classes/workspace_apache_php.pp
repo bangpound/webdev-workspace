@@ -44,6 +44,10 @@ Include \"/vagrant/conf.d/*.conf\"",
 		ensure => installed,
 		require => Package["php5"]
 	}
+	package { php5-gmp:
+		ensure => installed,
+		require => Package["php5"]
+	}
 	package { php-apc:
 		ensure => installed,
 		require => Package["php5"]
