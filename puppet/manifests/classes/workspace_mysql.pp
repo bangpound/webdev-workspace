@@ -9,6 +9,15 @@ class workspace_mysql {
       },
     }
 
+   mysql::server::config { 'basic_config':
+     settings => {
+       'mysqld' => {
+         'max_allowed_packet'    => '64M',
+       },
+     }
+   }
+
+
 	# Grant all privileges to root user on all interfaces.
     database_user { 'root@%':
       password_hash => mysql_password('vagrant')
