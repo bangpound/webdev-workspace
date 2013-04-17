@@ -82,6 +82,8 @@ Include \"/vagrant/conf.d/*.conf\"",
 	  provider => pear
 	}
 
+	include xdebug
+
 	file { '/etc/php5/conf.d/apc.ini':
 		ensure => "present",
 		content => "apc.shm_size=\"64M\"",
@@ -113,4 +115,11 @@ date.timezone = 'UTC'",
 		require => Package['php5'],
 		notify => Service[httpd]
 	}
+
+  xdebug::config { 'default':
+    remote_enable => '1',
+    remote_handler => 'dbgp',
+    remote_host => '172.16.232.1',
+    remote_port => '9000',
+  }
 }
