@@ -48,6 +48,10 @@ Include \"/vagrant/conf.d/*.conf\"",
 		ensure => installed,
 		require => Package["php5"]
 	}
+	package { php5-intl:
+		ensure => installed,
+		require => Package["php5"]
+	}
 	package { php-apc:
 		ensure => installed,
 		require => Package["php5"]
@@ -82,6 +86,13 @@ Include \"/vagrant/conf.d/*.conf\"",
 		ensure => "present",
 		content => "apc.shm_size=\"64M\"",
 		require => Package['php-apc'],
+	}
+
+	file { '/etc/php5/conf.d/date.ini':
+		ensure => "present",
+		content => "[Date]
+date.timezone = 'UTC'",
+		require => Package['php5']
 	}
 
 	augeas { 'php_dev_config':
