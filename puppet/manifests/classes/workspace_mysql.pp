@@ -12,7 +12,7 @@ class workspace_mysql {
    mysql::server::config { 'basic_config':
      settings => {
        'mysqld' => {
-         'max_allowed_packet'    => '64M',
+         'max_allowed_packet'    => '128M',
        },
      }
    }
